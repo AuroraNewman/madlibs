@@ -36,10 +36,18 @@ public class MadLib {
 
     private static void chooseMadLib(int option, MadLib madLib) {
         switch (option) {
-            case 1: madLib.createMadLib1();
-            case 2: madLib.createMadLib2();
-            case 3: madLib.createMadLib3();
-            case 4: madLib.createMadLib4();
+            case 1:
+                madLib.createMadLib1();
+                break;
+            case 2:
+                madLib.createMadLib2();
+                break;
+            case 3:
+                madLib.createMadLib3();
+                break;
+            case 4:
+                madLib.createMadLib4();
+                break;
         }
     }
 
