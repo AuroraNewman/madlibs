@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -17,6 +18,7 @@ public class MadLib {
                 if (entry == 0) {
                     System.out.println("Thanks for the laughs!");
                     System.out.println("See you next time!");
+                    done = true;
                     break;
                 }
                 if (entry < 0) {
@@ -53,21 +55,45 @@ public class MadLib {
 
     private void createMadLib1() {
         Scanner input = new Scanner(System.in);
+
+        //hashmap, key is the type, int, array of words
+        int numAdj = 1;
+        int numNoun = 1;
+        int numPluralNoun = 2;
+        int numVerb = 1;
+        int numFood = 2;
+        int numSaying = 1;
+        int numColor = 1;
+        int numAnimal = 1;
+        int numRideable = 1;
+        int numPerson = 1;
+        int numOccupation = 0;
+        int numInfinitiveVerb = 0;
+        int numPlace = 1;
+        int numNumber = 1;
+        int numBodyPart = 1;
+
         System.out.println("Please enter an adjective.");
         String adjective1 = input.nextLine();
         String s1 = adjective1.substring(0, 1).toUpperCase();
         String adjective1Capitalized = s1 + adjective1.substring(1);
+
         System.out.println("Enter a food (plural).");
         String foods1 = input.nextLine();
+
         System.out.println("Provide a saying.");
         String saying1 = input.nextLine();
+
         System.out.println("I'll take a noun for 500.");
         String noun1 = input.nextLine();
+
         System.out.println("What's your favorite (or least favorite) color?");
         System.out.println("(Give any color; I'm not going to check!)");
         String color1 = input.nextLine();
+
         System.out.println("Name a person, any person.");
         String person1 = input.nextLine();
+
         System.out.println("Another plural food, if you please.");
         String foods2 = input.nextLine();
         System.out.println("What's something you can ride?");
@@ -91,24 +117,47 @@ public class MadLib {
 
     private void createMadLib2() {
         Scanner input = new Scanner(System.in);
+        int numAdj = 2;
+        int numNoun = 3;
+        int numPluralNoun = 2;
+        int numVerb = 2;
+        int numFood = 0;
+        int numSaying = 0;
+        int numColor = 0;
+        int numAnimal = 0;
+        int numRideable = 0;
+        int numPerson = 0;
+        int numOccupation = 1;
+        int numInfinitiveVerb = 1;
+        int numPlace = 1;
+        int numNumber = 1;
+        int numBodyPart = 1;
         System.out.println("Please enter an occupation.");
         String occupation1 = input.nextLine();
+
         System.out.println("Enter a noun.");
         String noun1 = input.nextLine();
+
         System.out.println("Provide an adjective.");
         String adjective1 = input.nextLine();
+
         System.out.println("I'll take a verb for 500.");
         String verb1 = input.nextLine();
+
         System.out.println("One more adjective, please!");
         String adjective2 = input.nextLine();
+
         System.out.println("'nother noun.");
         String noun2 = input.nextLine();
+
         System.out.println("One infinitive verb, por favor.");
         String verb2 = input.nextLine();
+
         System.out.println("Almost there! Last noun.");
         String noun3 = input.nextLine();
         String s1 = noun3.substring(0, 1).toUpperCase();
         String noun3Capitalized = s1 + noun3.substring(1);
+
         System.out.println("The verb's the word!");
         String verb3 = input.nextLine();
         System.out.println();
@@ -127,31 +176,56 @@ public class MadLib {
      * text from https://www.madtakes.com/libs/186.html
      */
     private void createMadLib3() {
+        int numAdj = 2;
+        int numNoun = 2;
+        int numPluralNoun = 2;
+        int numVerb = 2;
+        int numInfinitiveVerb = 0;
+        int numFood = 0;
+        int numSaying = 0;
+        int numColor = 0;
+        int numAnimal = 0;
+        int numRideable = 0;
+        int numPerson = 0;
+        int numOccupation = 0;
+        int numPlace = 1;
+        int numNumber = 1;
+        int numBodyPart = 1;
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter a plural noun.");
         String pluralNoun1 = input.nextLine();
         String s1 = pluralNoun1.substring(0, 1).toUpperCase();
         String pluralNoun1Capitalized = s1 + pluralNoun1.substring(1);
+
         System.out.println("Enter a place.");
         String place1 = input.nextLine();
         s1 = place1.substring(0, 1).toUpperCase();
         String place1Capitalized = s1 + place1.substring(1);
+
         System.out.println("Provide a plural noun.");
         String pluralNoun2 = input.nextLine();
+
         System.out.println("I'll take a noun for 500.");
         String noun2 = input.nextLine();
+
         System.out.println("One adjective, please!");
         String adj1 = input.nextLine();
+
         System.out.println("Verb me!");
         String verb1 = input.nextLine();
+
         System.out.println("What's a noun between friends?");
         String noun1 = input.nextLine();
+
         System.out.println("One number, coming up!");
         String number1 = input.nextLine();
+
         System.out.println("Another adjective!");
         String adj2 = input.nextLine();
+
         System.out.println("Almost there! Gimme a part of the body.");
         String bodyPart1 = input.nextLine();
+
         System.out.println("The verb's the word!");
         String verb2 = input.nextLine();
         System.out.println();
@@ -167,7 +241,7 @@ public class MadLib {
         System.out.println("And the continuance of their parents` rage,");
         System.out.println("Which, but their children`s end, nought could " + verb1 + ",");
         System.out.println("Is now the " + number1 + " hours` traffic of our stage;");
-        System.out.println("The which if you with " + adj2 + bodyPart1 + " attend,");
+        System.out.println("The which if you with " + adj2 + " "+ bodyPart1 + " attend,");
         System.out.println("What here shall " + verb2 + ", our toil shall strive to mend.");
         System.out.println();
         System.out.println("Would you like to go again?");
@@ -177,7 +251,88 @@ public class MadLib {
      * text from https://www.madtakes.com/libs/058.html
      */
     private void createMadLib4(){
+
+        int numAdj = 3;
+        String[] adjectives = userInput("adjective", numAdj);
+        System.out.println("in create method");
+        for (int i = 0; i<adjectives.length; i++){
+            System.out.println(adjectives[i]);
+        }
+        int numAdv = 1;
+        String[] adverb = userInput("adverb", numAdv);
+        int numNoun = 2;
+        String[] noun = userInput("noun", numNoun);
+        int numPluralNoun = 1;
+        String[] pluralNoun = userInput("plural noun", numPluralNoun);
+        int numVerb = 1;
+        String[] verb = userInput("verb", numVerb);
+        int numPastVerb = 2;
+        String[] pastVerb = userInput("verb in past tense", numPastVerb);
+        int numPerson = 3;
+        String[] person = userInput("celebrity's name", numPerson);
+        int numOccupation = 2;
+        String[] occupation = userInput("occupation", numOccupation);
+        int numMaterial = 1;
+        String[] material = userInput("material used in construction", numMaterial);
+        int numCreature = 1;
+        String[] creature = userInput("mythical creature", numCreature);
+
+        System.out.println();
+        System.out.println("In his second term at Hogwarts School of " + noun[0] + ", and Wizardry, Harry Potter (played by " + person[0] + ") is warned by a/an " + creature[0] + " named Dobby ");
+        System.out.println("that " + noun[1] + " will "+ verb[0] + " when he returns to Hogwarts. Besides the fact that he is still " + pastVerb[0] + " by Professor Snape (" + person[1] + ") and " + pastVerb[1] + " by Draco Malfoy (Tom Felton),");
+        System.out.println("Harry gets off to a " + adjectives[0] + " start with his two best " + pluralNoun[0] + ", Ron Weasley (Rupert Grint) and Hermione Granger (" + person[2] + ").");
+        System.out.println("Also, famous " + occupation[0] + " Gilderoy Lockhart (Kenneth Branagh) has joined the Hogwarts staff and is the new Defense Against the " + adjectives[1] + " Arts teacher.");
+        System.out.println("But now, Hogwarts students are " + adverb[0] + "  being turned into " + material[0] + ".");
+        System.out.println("But who is the one doing it?");
+        System.out.println("Malfoy?");
+        System.out.println(occupation[1] + " Hagrid (Robbie Contrane)?");
+        System.out.println("or even Harry?");
+        System.out.println("But what if it`s Lord Voldemort trying to make his " + adjectives[2] + " return?");
+        System.out.println();
+        System.out.println("Would you like to go again?");
+
+    }
+    private String[] userInput(String wordCategory, int numberWords){
+        String[] words = new String[numberWords];
         Scanner input = new Scanner(System.in);
+        try {
+            for (int i = 0; i < numberWords; i++) {
+                if (wordCategory.startsWith("a") || wordCategory.startsWith("e") || wordCategory.startsWith("i") || wordCategory.startsWith("o") || wordCategory.startsWith("u")) {
+                    System.out.println("Please enter an " + wordCategory);
+                } else {
+                    System.out.println("Please enter a " + wordCategory);
+                }
+                String temp = input.nextLine();
+                if (temp != null) {
+                    words[i] =temp;
+                }
+                System.out.println("before end of for loop");
+                System.out.println(words[i]);
+            }
+        } catch (NullPointerException e){
+            System.out.println("Please enter a valid word.");
+        }
+        System.out.println("after end of for loop");
+        for  (int i = 0; i < words.length; i++){
+            System.out.println(words[i]);
+        }
+            return words;
+    }
+}
+
+
+/*
+System.out.println("");
+String  = input.nextLine();
+ */
+
+/*
+each madlib has an integer representing number of times that word category is called
+for as many times as that integer is going, prompt user to make that many inputs
+ */
+
+//TODO: make confirmation before generating the madlib
+/*
         System.out.println("Please enter a noun.");
         String noun1 = input.nextLine();
 
@@ -230,25 +385,4 @@ public class MadLib {
         System.out.println("And finish off with a final adjective");
         String adj3 = input.nextLine();
 
-        System.out.println();
-        System.out.println("In his second term at Hogwarts School of " + noun1 + ", and Wizardry, Harry Potter (played by " + name1 + ") is warned by a/an " + creature1 + " named Dobby ");
-        System.out.println("that " + noun2 + " will "+ verb1 + " when he returns to Hogwarts. Besides the fact that he is still " + pastVerb1 + " by Professor Snape (" + name2 + ") and " + pastVerb2 + " by Draco Malfoy (Tom Felton),");
-        System.out.println("Harry gets off to a " + adj1 + " start with his two best " + pluralNoun3 + ", Ron Weasley (Rupert Grint) and Hermione Granger (" + name3 + ").");
-        System.out.println("Also, famous " + occupation1 + " Gilderoy Lockhart (Kenneth Branagh) has joined the Hogwarts staff and is the new Defense Against the " + adj3 + " Arts teacher.");
-        System.out.println("But now, Hogwarts students are " + adv1 + "  being turned into " + adv1 + " " + material1 + ".");
-        System.out.println("But who is the one doing it?");
-        System.out.println("Malfoy?");
-        System.out.println(occupation2 + " Hagrid (Robbie Contrane)?");
-        System.out.println("or even Harry?");
-        System.out.println("But what if it`s Lord Voldemort trying to make his " + adj3 + " return?");
-        System.out.println();
-        System.out.println("Would you like to go again?");
-
-    }
-}
-
-
-/*
-System.out.println("");
-String  = input.nextLine();
- */
+         */
