@@ -176,73 +176,47 @@ public class MadLib {
      * text from https://www.madtakes.com/libs/186.html
      */
     private void createMadLib3() {
+        /*
+        int numAdj = 3;
+        String[] adjectives = userInput("adjective", numAdj);
+         */
         int numAdj = 2;
+        String[] adj = userInput("adjective", numAdj);
         int numNoun = 2;
+        String[] noun = userInput("noun", numNoun);
         int numPluralNoun = 2;
+        String[] pluralNoun = userInput("plural noun", numPluralNoun);
         int numVerb = 2;
-        int numInfinitiveVerb = 0;
-        int numFood = 0;
-        int numSaying = 0;
-        int numColor = 0;
-        int numAnimal = 0;
-        int numRideable = 0;
-        int numPerson = 0;
-        int numOccupation = 0;
+        String[] verb = userInput("verb", numVerb);
         int numPlace = 1;
+        String[] place = userInput("place", numPlace);
         int numNumber = 1;
+        String[] number = userInput("number", numNumber);
         int numBodyPart = 1;
-        Scanner input = new Scanner(System.in);
-        System.out.println("Please enter a plural noun.");
-        String pluralNoun1 = input.nextLine();
-        String s1 = pluralNoun1.substring(0, 1).toUpperCase();
-        String pluralNoun1Capitalized = s1 + pluralNoun1.substring(1);
+        String[] bodyPart = userInput("part of the body", numBodyPart);
 
-        System.out.println("Enter a place.");
-        String place1 = input.nextLine();
-        s1 = place1.substring(0, 1).toUpperCase();
-        String place1Capitalized = s1 + place1.substring(1);
+        //following two are for nouns that should be capitalized
+        String s1 = pluralNoun[0].substring(0, 1).toUpperCase();
+        String pluralNoun1Capitalized = s1 + pluralNoun[0].substring(1);
 
-        System.out.println("Provide a plural noun.");
-        String pluralNoun2 = input.nextLine();
+        s1 = place[0].substring(0, 1).toUpperCase();
+        String place1Capitalized = s1 + place[0].substring(1);
 
-        System.out.println("I'll take a noun for 500.");
-        String noun2 = input.nextLine();
-
-        System.out.println("One adjective, please!");
-        String adj1 = input.nextLine();
-
-        System.out.println("Verb me!");
-        String verb1 = input.nextLine();
-
-        System.out.println("What's a noun between friends?");
-        String noun1 = input.nextLine();
-
-        System.out.println("One number, coming up!");
-        String number1 = input.nextLine();
-
-        System.out.println("Another adjective!");
-        String adj2 = input.nextLine();
-
-        System.out.println("Almost there! Gimme a part of the body.");
-        String bodyPart1 = input.nextLine();
-
-        System.out.println("The verb's the word!");
-        String verb2 = input.nextLine();
         System.out.println();
-        System.out.println("Two " + pluralNoun1 + ", both alike in dignity,");
-        System.out.println("In fair " + place1 + ", where we lay our scene,");
-        System.out.println("From ancient " + noun1 + " break to new mutiny,");
+        System.out.println("Two " + pluralNoun1Capitalized + ", both alike in dignity,");
+        System.out.println("In fair " + place1Capitalized + ", where we lay our scene,");
+        System.out.println("From ancient " + noun[0] + " break to new mutiny,");
         System.out.println("Where civil blood makes civil hands unclean.");
         System.out.println("From forth the fatal loins of these two foes");
-        System.out.println("A pair of star-cross`d " + pluralNoun2 + " take their life;");
+        System.out.println("A pair of star-cross`d " + pluralNoun[1] + " take their life;");
         System.out.println("Whole misadventured piteous overthrows");
-        System.out.println("Do with their " + noun2 + " bury their parents` strife.");
-        System.out.println("The fearful passage of their " + adj1 + " love,");
+        System.out.println("Do with their " + noun[1] + " bury their parents` strife.");
+        System.out.println("The fearful passage of their " + adj[0] + " love,");
         System.out.println("And the continuance of their parents` rage,");
-        System.out.println("Which, but their children`s end, nought could " + verb1 + ",");
-        System.out.println("Is now the " + number1 + " hours` traffic of our stage;");
-        System.out.println("The which if you with " + adj2 + " "+ bodyPart1 + " attend,");
-        System.out.println("What here shall " + verb2 + ", our toil shall strive to mend.");
+        System.out.println("Which, but their children`s end, nought could " + verb[0] + ",");
+        System.out.println("Is now the " + number[0] + " hours` traffic of our stage;");
+        System.out.println("The which if you with " + adj[1] + " "+ bodyPart[0] + " attend,");
+        System.out.println("What here shall " + verb[1] + ", our toil shall strive to mend.");
         System.out.println();
         System.out.println("Would you like to go again?");
     }
@@ -254,10 +228,6 @@ public class MadLib {
 
         int numAdj = 3;
         String[] adjectives = userInput("adjective", numAdj);
-        System.out.println("in create method");
-        for (int i = 0; i<adjectives.length; i++){
-            System.out.println(adjectives[i]);
-        }
         int numAdv = 1;
         String[] adverb = userInput("adverb", numAdv);
         int numNoun = 2;
@@ -306,83 +276,12 @@ public class MadLib {
                 if (temp != null) {
                     words[i] =temp;
                 }
-                System.out.println("before end of for loop");
-                System.out.println(words[i]);
             }
         } catch (NullPointerException e){
             System.out.println("Please enter a valid word.");
-        }
-        System.out.println("after end of for loop");
-        for  (int i = 0; i < words.length; i++){
-            System.out.println(words[i]);
         }
             return words;
     }
 }
 
-
-/*
-System.out.println("");
-String  = input.nextLine();
- */
-
-/*
-each madlib has an integer representing number of times that word category is called
-for as many times as that integer is going, prompt user to make that many inputs
- */
-
 //TODO: make confirmation before generating the madlib
-/*
-        System.out.println("Please enter a noun.");
-        String noun1 = input.nextLine();
-
-        System.out.println("Enter a famous person's name.");
-        String name1 = input.nextLine();
-
-        System.out.println("Provide a mythical creature.");
-        String creature1 = input.nextLine();
-
-        System.out.println("I'll take a noun for 500.");
-        String noun2 = input.nextLine();
-
-        System.out.println("Verb me!");
-        String verb1 = input.nextLine();
-
-        System.out.println("verb ending in 'ed', please!");
-        String pastVerb1 = input.nextLine();
-
-        System.out.println("Can you name another famous person?");
-        String name2 = input.nextLine();
-
-        System.out.println("Another verb ending in 'ed', please");
-        String pastVerb2 = input.nextLine();
-
-        System.out.println("An adjective!");
-        String adj1 = input.nextLine();
-
-        System.out.println("Gimme gimme a plural noun after midnight");
-        String pluralNoun3 = input.nextLine();
-
-        System.out.println("Is this madlibs or a tabloid?");
-        System.out.println("in any case, one more famous person, please");
-        String name3 = input.nextLine();
-
-        System.out.println("An occupation");
-        String occupation1 = input.nextLine();
-
-        System.out.println("Another adjective!");
-        String adj2 = input.nextLine();
-
-        System.out.println("Adverb ending in 'ly");
-        String adv1 = input.nextLine();
-
-        System.out.println("Type of material");
-        String material1 = input.nextLine();
-
-        System.out.println("Nearly done! One more occupation");
-        String occupation2 = input.nextLine();
-
-        System.out.println("And finish off with a final adjective");
-        String adj3 = input.nextLine();
-
-         */
