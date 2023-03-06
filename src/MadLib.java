@@ -54,72 +54,45 @@ public class MadLib {
     }
 
     private void createMadLib1() {
-        Scanner input = new Scanner(System.in);
-
-        //hashmap, key is the type, int, array of words
         int numAdj = 1;
+        String[] adjective = userInput("adjective", numAdj);
         int numNoun = 1;
+        String[] noun = userInput("noun", numNoun);
         int numPluralNoun = 2;
+        String[] pluralNoun = userInput("plural noun", numPluralNoun);
         int numVerb = 1;
+        String[] verb = userInput("verb", numVerb);
         int numFood = 2;
+        String[] food = userInput("food", numFood);
         int numSaying = 1;
+        String[] saying = userInput("saying", numSaying);
         int numColor = 1;
+        String[] color = userInput("color", numColor);
         int numAnimal = 1;
+        String[] animal = userInput("animal", numAnimal);
         int numRideable = 1;
+        String[] rideable = userInput("thing in which a person can ride (e.g., car)", numRideable);
         int numPerson = 1;
-        int numOccupation = 0;
-        int numInfinitiveVerb = 0;
-        int numPlace = 1;
-        int numNumber = 1;
-        int numBodyPart = 1;
+        String[] person = userInput("person", numPerson);
 
-        System.out.println("Please enter an adjective.");
-        String adjective1 = input.nextLine();
-        String s1 = adjective1.substring(0, 1).toUpperCase();
-        String adjective1Capitalized = s1 + adjective1.substring(1);
+        String s1 = adjective[0].substring(0, 1).toUpperCase();
+        String adjective1Capitalized = s1 + adjective[0].substring(1);
 
-        System.out.println("Enter a food (plural).");
-        String foods1 = input.nextLine();
+        s1 = animal[0].substring(0, 1).toUpperCase();
+        String animal1Capitalized = s1 + animal[0].substring(1);
 
-        System.out.println("Provide a saying.");
-        String saying1 = input.nextLine();
-
-        System.out.println("I'll take a noun for 500.");
-        String noun1 = input.nextLine();
-
-        System.out.println("What's your favorite (or least favorite) color?");
-        System.out.println("(Give any color; I'm not going to check!)");
-        String color1 = input.nextLine();
-
-        System.out.println("Name a person, any person.");
-        String person1 = input.nextLine();
-
-        System.out.println("Another plural food, if you please.");
-        String foods2 = input.nextLine();
-        System.out.println("What's something you can ride?");
-        String rideable1 = input.nextLine();
-        System.out.println("Almost there! Give me an animal.");
-        String animal1 = input.nextLine();
-        s1 = animal1.substring(0, 1).toUpperCase();
-        String animal1Capitalized = s1 + animal1.substring(1);
-        System.out.println("Last one! I'd like a verb, please.");
-        String verb1 = input.nextLine();
-        System.out.println();
-        System.out.println("Today I went to my favorite Taco Stand called the " + adjective1Capitalized + " " + animal1Capitalized + ".");
-        System.out.println("Unlike most food stands, they cook and prepare the food in a " + rideable1 + " while you " + verb1 + ".");
-        System.out.println("The best thing on the menu is the " + color1 + " " + noun1 + ".");
-        System.out.println("Instead of ground beef they fill the taco with " + foods2 + ", cheese, and top it off with a salsa made from " + foods1 + ".");
-        System.out.println("If that doesn't make your mouth water, then it's just like " + person1 + " always says: ");
-        System.out.println(saying1 + "!");
+        System.out.println("Today I went to my favorite taco stand called the " + adjective1Capitalized + " " + animal1Capitalized + ".");
+        System.out.println("Unlike most food stands, they cook and prepare the food in a " + rideable[0] + " while you " + verb[0] + ".");
+        System.out.println("The best thing on the menu is the " + color[0] + " " + noun[0] + ".");
+        System.out.println("Instead of ground beef they fill the taco with " + food[1] + ", cheese, and top it off with a salsa made from " + food[0] + ".");
+        System.out.println("If that doesn't make your mouth water, then it's just like " + person[0] + " always says: ");
+        System.out.println(saying[0] + "!");
         System.out.println();
         System.out.println("Would you like to go again?");
     }
 
     private void createMadLib2() {
-        /*
-        int numAdj = 3;
-        String[] adjective = userInput("adjective", numAdj);
-         */
+
         int numAdj = 2;
         String[] adjective = userInput("adjective", numAdj);
         int numNoun = 3;
@@ -128,7 +101,6 @@ public class MadLib {
         String[] verb = userInput("verb", numVerb);
         int numOccupation = 1;
         String[] occupation = userInput("occupation", numOccupation);
-
 
         //next noun should be capitalized
         String s1 = noun[2].substring(0, 1).toUpperCase();
