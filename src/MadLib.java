@@ -116,57 +116,31 @@ public class MadLib {
     }
 
     private void createMadLib2() {
-        Scanner input = new Scanner(System.in);
+        /*
+        int numAdj = 3;
+        String[] adjective = userInput("adjective", numAdj);
+         */
         int numAdj = 2;
+        String[] adjective = userInput("adjective", numAdj);
         int numNoun = 3;
-        int numPluralNoun = 2;
-        int numVerb = 2;
-        int numFood = 0;
-        int numSaying = 0;
-        int numColor = 0;
-        int numAnimal = 0;
-        int numRideable = 0;
-        int numPerson = 0;
+        String[] noun = userInput("noun", numNoun);
+        int numVerb = 3;
+        String[] verb = userInput("verb", numVerb);
         int numOccupation = 1;
-        int numInfinitiveVerb = 1;
-        int numPlace = 1;
-        int numNumber = 1;
-        int numBodyPart = 1;
-        System.out.println("Please enter an occupation.");
-        String occupation1 = input.nextLine();
+        String[] occupation = userInput("occupation", numOccupation);
 
-        System.out.println("Enter a noun.");
-        String noun1 = input.nextLine();
 
-        System.out.println("Provide an adjective.");
-        String adjective1 = input.nextLine();
+        //next noun should be capitalized
+        String s1 = noun[2].substring(0, 1).toUpperCase();
+        String noun3Capitalized = s1 + noun[2].substring(1);
 
-        System.out.println("I'll take a verb for 500.");
-        String verb1 = input.nextLine();
-
-        System.out.println("One more adjective, please!");
-        String adjective2 = input.nextLine();
-
-        System.out.println("'nother noun.");
-        String noun2 = input.nextLine();
-
-        System.out.println("One infinitive verb, por favor.");
-        String verb2 = input.nextLine();
-
-        System.out.println("Almost there! Last noun.");
-        String noun3 = input.nextLine();
-        String s1 = noun3.substring(0, 1).toUpperCase();
-        String noun3Capitalized = s1 + noun3.substring(1);
-
-        System.out.println("The verb's the word!");
-        String verb3 = input.nextLine();
         System.out.println();
-        System.out.println("Today a " + occupation1 + " named " + noun3 + " came to our school to talk to us about her job.");
-        System.out.println("She said the most important skill you need to know to do her job is to be able " + verb2 + " around (a) " + adjective1 + " " + noun2 + ".");
-        System.out.println("She said it was easy for her to learn her job because she loved to " + verb1 + " when she was my age--and that helps a lot!");
-        System.out.println("If you're considering her profession, I hope you can be near (a) " + adjective2 + " " + noun1 + ".");
+        System.out.println("Today a " + occupation[0] + " named " + noun3Capitalized + " came to our school to talk to us about her job.");
+        System.out.println("She said the most important skill you need to know to do her job is to be able " + verb[1] + " around a " + adjective[0] + " " + noun[1] + ".");
+        System.out.println("She said it was easy for her to learn her job because she loved to " + verb[0] + " when she was my age--and that helps a lot!");
+        System.out.println("If you're considering her profession, I hope you can be near a " + adjective[1] + " " + noun[0] + ".");
         System.out.println("That's very important!");
-        System.out.println("If you get too distracted in that situation, you won't be able to " + verb3 + " next to (a) " + noun1 + "!");
+        System.out.println("If you get too distracted in that situation, you won't be able to " + verb[2] + " next to a " + noun[0] + "!");
         System.out.println();
         System.out.println("Would you like to go again?");
 
@@ -176,10 +150,7 @@ public class MadLib {
      * text from https://www.madtakes.com/libs/186.html
      */
     private void createMadLib3() {
-        /*
-        int numAdj = 3;
-        String[] adjectives = userInput("adjective", numAdj);
-         */
+
         int numAdj = 2;
         String[] adj = userInput("adjective", numAdj);
         int numNoun = 2;
