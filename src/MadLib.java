@@ -1,42 +1,18 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MadLib {
-    private static final int NUMBER_OF_MADLIBS = 4;
-
-    public static void main(String[] args) {
-        MadLib madLib = new MadLib();
-        boolean done = false;
-        while (!done) {
-            System.out.println();
-            System.out.println("Please choose a number between 1 and " + NUMBER_OF_MADLIBS + ".");
-            System.out.println("To exit, please enter 0.");
-            Scanner input = new Scanner(System.in);
-            try {
-                int entry = input.nextInt();
-                if (entry == 0) {
-                    System.out.println("Thanks for the laughs!");
-                    System.out.println("See you next time!");
-                    done = true;
-                    break;
-                }
-                if (entry < 0) {
-                    System.out.println("Please choose a positive integer.");
-                    break;
-                }
-                if (entry > NUMBER_OF_MADLIBS) {
-                    System.out.println("That number is too large.");
-                    break;
-                } else chooseMadLib(entry, madLib);
-            } catch (InputMismatchException e) {
-                System.out.println("Please choose a valid number.");
-            }
-        }
+    public static final int NUMBER_OF_MADLIBS = 4;
+    //String description, arraylist of objects that consist of a pair: wordcategory and int number appearances,
+    // alternative set of static arrays for each word category where index 0 is blank, 0 corresponds to madlib 1, 1 to madlib 2, etc
+    MadLib(){
 
     }
 
-    private static void chooseMadLib(int option, MadLib madLib) {
+
+    public static void chooseMadLib(int option, MadLib madLib) {
         switch (option) {
             case 1:
                 madLib.createMadLib1();
@@ -58,8 +34,6 @@ public class MadLib {
         String[] adjective = userInput("adjective", numAdj);
         int numNoun = 1;
         String[] noun = userInput("noun", numNoun);
-        int numPluralNoun = 2;
-        String[] pluralNoun = userInput("plural noun", numPluralNoun);
         int numVerb = 1;
         String[] verb = userInput("verb", numVerb);
         int numFood = 2;
@@ -84,9 +58,12 @@ public class MadLib {
         System.out.println("Today I went to my favorite taco stand called the " + adjective1Capitalized + " " + animal1Capitalized + ".");
         System.out.println("Unlike most food stands, they cook and prepare the food in a " + rideable[0] + " while you " + verb[0] + ".");
         System.out.println("The best thing on the menu is the " + color[0] + " " + noun[0] + ".");
-        System.out.println("Instead of ground beef they fill the taco with " + food[1] + ", cheese, and top it off with a salsa made from " + food[0] + ".");
+
+
+        System.out.println("Instead of ground beef they fill the taco with " + food[--numFood] + ", cheese, and top it off with a salsa made from " + food[--numFood] + ".");
         System.out.println("If that doesn't make your mouth water, then it's just like " + person[0] + " always says: ");
         System.out.println(saying[0] + "!");
+
         System.out.println();
         System.out.println("Would you like to go again?");
     }
